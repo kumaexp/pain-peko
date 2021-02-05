@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- あのね！あのね！ -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Pain Peko</title>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+	<link rel="manifest" href="assets/favicon/site.webmanifest">
+
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<script src="assets/js/jquery.min.js"></script>
+</head>
+<body>
+	<noscript>Please enable JavaScript execution in your browser</noscript>
+	
+	<div class="overlay">
+		<img src="assets/img/usaken.png" alt="" class="usaken-logo">
+		<!-- <img src="assets/img/peko-bun.png" alt=""> -->
+		<div class="gif-toggle">
+			<img src="assets/img/peko-mad.gif" alt="" class="pain-active">
+			<!-- <img src="assets/img/peko-pain.gif" alt="" class=""> -->
+		</div>
+		<audio id="pain-peko" type="audio/mpeg" src="assets/audio/pain-peko.mp3"></audio>
+		<button class="pain">CLICK ME</button>
+	</div>
+</body>
+
+<script>
+	$(document).ready(function(){
+
+		$('.pain').click(function(){
+
+			var audio = $("#pain-peko")[0];
+
+			$(this).html("PAIN PEKO");
+			// $('.gif-toggle img:first-child').removeClass("pain-active");
+			// $('.gif-toggle img:last-child').addClass("pain-active");
+			$('.pain-active').attr('src', 'assets/img/peko-pain.gif');
+			$(this).addClass("pain-active");
+			audio.play();
+
+			setTimeout(
+				function() {
+					$('.pain').html("CLICK ME");
+					// $('.gif-toggle img:last-child').removeClass("pain-active");
+					// $('.gif-toggle img:first-child').addClass("pain-active");
+					$('.pain-active').attr('src', 'assets/img/peko-mad.gif');
+					$('.pain').removeClass("pain-active");
+				}, 2000);
+		});
+
+	});
+</script>
+
+</html>
