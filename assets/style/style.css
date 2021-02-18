@@ -50,6 +50,33 @@ body {
   background: url("../img/pain.jpg") no-repeat;
   background-size: cover; }
 
+.loading-overlay {
+  background-color: #DD8D2E;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999; }
+  .loading-overlay .peko-orange {
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0;
+    background-color: #FFFFFF; }
+  .loading-overlay .peko-load {
+    position: absolute;
+    left: 50%; }
+    .loading-overlay .peko-load--1 {
+      bottom: 30%;
+      -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
+    .loading-overlay .peko-load--2 {
+      bottom: 15%;
+      -webkit-transform: translate(-50%, 50%);
+      -ms-transform: translate(-50%, 50%);
+      transform: translate(-50%, 50%);
+      z-index: 2; }
+
 .overlay {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;

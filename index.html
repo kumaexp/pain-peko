@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- あのね！あのね！ -->
+	<!-- こんぺこ〜！こんぺこ〜！ -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>Pain Peko</title>
 
@@ -12,12 +13,21 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 	<link rel="manifest" href="assets/favicon/site.webmanifest">
 
+	<link rel="preload" href="assets/img/peko-mad.gif">
+	<link rel="preload" href="assets/img/peko-pain.gif">
+
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 	<script src="assets/js/jquery.min.js"></script>
 </head>
 <body>
 	<noscript>Please enable JavaScript execution in your browser</noscript>
 	
+	<div class="loading-overlay">
+		<img src="assets/img/peko-load-1.gif" alt="" class="peko-load peko-load--1">
+		<img src="assets/img/peko-load-2.gif" alt="" class="peko-load peko-load--2">
+		<div class="peko-orange"></div>
+	</div>
+
 	<div class="overlay">
 		<img src="assets/img/usaken.png" alt="" class="usaken-logo">
 		<!-- <img src="assets/img/peko-bun.png" alt=""> -->
@@ -38,8 +48,6 @@
 			var audio = $("#pain-peko")[0];
 
 			$(this).html("PAIN PEKO");
-			// $('.gif-toggle img:first-child').removeClass("pain-active");
-			// $('.gif-toggle img:last-child').addClass("pain-active");
 			$('.pain-active').attr('src', 'assets/img/peko-pain.gif');
 			$(this).addClass("pain-active");
 			audio.play();
@@ -47,8 +55,6 @@
 			setTimeout(
 				function() {
 					$('.pain').html("CLICK ME");
-					// $('.gif-toggle img:last-child').removeClass("pain-active");
-					// $('.gif-toggle img:first-child').addClass("pain-active");
 					$('.pain-active').attr('src', 'assets/img/peko-mad.gif');
 					$('.pain').removeClass("pain-active");
 				}, 2000);
