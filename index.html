@@ -13,13 +13,11 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 	<link rel="manifest" href="assets/favicon/site.webmanifest">
 
-	<link rel="preload" href="assets/img/peko-mad.gif">
-	<link rel="preload" href="assets/img/peko-pain.gif">
-
 	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/imgload.min.js"></script>
 </head>
-<body>
+<body class="peko-loading">
 	<noscript>Please enable JavaScript execution in your browser</noscript>
 	
 	<div class="loading-overlay">
@@ -41,6 +39,12 @@
 </body>
 
 <script>
+
+	$('.overlay').imagesLoaded( function() {
+		$('.loading-overlay').addClass("loaded");
+		// $('body').removeClass("peko-loading");
+	});
+
 	$(document).ready(function(){
 
 		$('.pain').click(function(){

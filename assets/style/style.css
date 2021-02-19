@@ -47,8 +47,11 @@ input, select, textarea {
   src: url("../fonts/BC.otf"); }
 
 body {
-  background: url("../img/pain.jpg") no-repeat;
+  background: url("../img/pain.jpg") no-repeat center center fixed;
   background-size: cover; }
+
+.peko-loading {
+  overflow: hidden; }
 
 .loading-overlay {
   background-color: #DD8D2E;
@@ -77,31 +80,37 @@ body {
       transform: translate(-50%, 50%);
       z-index: 2; }
 
+.loaded {
+  display: none; }
+
 .overlay {
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+  /*display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;*/ }
 
 .usaken-logo {
-  width: 250px;
-  height: 107px; }
+  width: 200px;
+  height: 85.6px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
 
 .gif-toggle {
-  margin: 40px 0 20px; }
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
   .gif-toggle img {
     display: none; }
     .gif-toggle img.pain-active {
@@ -122,6 +131,13 @@ button {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   background: url("../img/peko-question.png") no-repeat calc(50% + 45px) 50%/20px 20px;
   background-color: #FFFFFF; }
   button:hover {
@@ -131,3 +147,38 @@ button {
     background: url("../img/peko-ex-mark.png") no-repeat calc(50% + 45px) 50%/20px 20px;
     background-color: #DD8D2E;
     color: #FFFFFF; }
+
+/* Responsive */
+@media screen and (min-height: 800px) {
+  button {
+    bottom: unset;
+    top: 740px; } }
+
+@media screen and (max-height: 750px) {
+  button {
+    bottom: 20px; } }
+
+@media screen and (max-height: 720px) {
+  .gif-toggle {
+    top: 20px; } }
+
+@media screen and (max-height: 680px) {
+  .gif-toggle {
+    top: 0; }
+  button {
+    bottom: 10px; } }
+
+@media screen and (max-height: 650px) {
+  .gif-toggle {
+    width: auto;
+    height: calc(100% - 55px); }
+    .gif-toggle img {
+      width: auto;
+      height: 100%; }
+  button {
+    bottom: 5px; } }
+
+@media screen and (max-height: 600px) {
+  .usaken-logo {
+    width: 160px;
+    height: 68.48px; } }
